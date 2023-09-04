@@ -12,7 +12,6 @@ function App() {
       <Model />
       <BenefitsSection />
       <HarmfulEffectsSection />
-      <Footer />
     </div>
   );
 }
@@ -20,7 +19,7 @@ function App() {
 function Header() {
   return (
     <header>
-      <h1>Electric Vehicles: Impact on Environment & Politics</h1>
+      <h1>Electric Vehicles: Impact on the Environment</h1>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
@@ -30,14 +29,6 @@ function Header() {
         </ul>
       </nav>
     </header>
-  );
-}
-
-function Footer() {
-  return (
-    <footer>
-      <p>&copy; 2023 EV Impact. All rights reserved.</p>
-    </footer>
   );
 }
 
