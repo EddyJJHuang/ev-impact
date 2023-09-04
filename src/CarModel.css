@@ -1,4 +1,4 @@
-.car-container {
+  .car-container {
     position: relative;
     display: inline-block;
   }
@@ -17,36 +17,37 @@
     display: flex; /* align in the middle */
     align-items: center;
     justify-content: center; /* align in the middle */
-    top: 67%; /* change the position of the dot vertically */
-    left: 40%; /* change the position of the dot horizontally */
+    top: 86%; /* change the position of the dot vertically */
+    left: 50%; /* change the position of the dot horizontally */
   }
+
+  .dot-button.dot1 {
+  top: 30%; /* 调整这些值以定位到第一个点的位置 */
+  left: 40%;
+}
+
+.dot-button.dot2 {
+  top: 86%; /* 调整这些值以定位到第二个点的位置 */
+  left: 50%;
+}
   
-  .description-box {
+  .description-box.dot1 {
     position: absolute;
     background-color: white;
     border: 1px solid black;
     padding: 10px;
-    top: 65%; 
+    top: 28%; 
     left: 42%;
     z-index: 1;
   }
-
-  .dot-button:hover {
-    background-color: rgb(0, 255, 238); 
-  }
-
-  .dot-button:hover::after {
-    content: "Click for detail";
+  .description-box.dot2 {
     position: absolute;
-    top: -20px;
-    left: 15px;
     background-color: white;
     border: 1px solid black;
-    padding: 5px;
-    border-radius: 5px;
-    white-space: nowrap;
-    z-index: 2;
-    pointer-events: none;
+    padding: 10px;
+    top: 84%; 
+    left: 52%;
+    z-index: 1;
   }
 
   .car-container {
