@@ -16,6 +16,7 @@ function CarModel() {
           This is description of the tire.
         </div>
       )}
+      <img src="/battery.png" alt="Electric Car Battery" className="battery-image" />
     </div>
   );
 }
