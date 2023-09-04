@@ -9,9 +9,9 @@ function App() {
     <div className="App">
       <Header />
       <HomePage />
+      <Model />
       <BenefitsSection />
       <HarmfulEffectsSection />
-      <InteractiveDemo />
       <Footer />
     </div>
   );
@@ -24,9 +24,9 @@ function Header() {
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
+          <li><a href="#interactive-demo">EV Model</a></li>
           <li><a href="#benefits">Benefits</a></li>
           <li><a href="#harmful-effects">Harmful Effects</a></li>
-          <li><a href="#interactive-demo">Interactive Demo</a></li>
         </ul>
       </nav>
     </header>
@@ -68,10 +68,10 @@ function HarmfulEffectsSection() {
   );
 }
 
-function InteractiveDemo() {
+function Model() {
   return (
     <section id="interactive-demo">
-      <h2>Interactive EV Model</h2>
+      <h2>EV Model</h2>
       <CarModel />
     </section>
   );

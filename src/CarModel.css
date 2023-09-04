@@ -1,0 +1,45 @@
+.car-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dot-button {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(217, 16, 16);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    top: 67%; 
+    left: 40%;
+  }
+  
+  .description-box {
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    top: 65%; 
+    left: 42%;
+    z-index: 1;
+  }
+
+  .dot-button:hover {
+    background-color: rgb(0, 255, 238); 
+  }
+  
+  .dot-button:hover::after {
+    content: "Click for detail";
+    position: absolute;
+    top: -20px;
+    left: 15px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
