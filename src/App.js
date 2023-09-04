@@ -1,6 +1,8 @@
 // App.js
 import React from 'react';
 import './App.css';
+import CarModel from './CarModel';
+
 
 function App() {
   return (
@@ -70,9 +72,10 @@ function InteractiveDemo() {
   return (
     <section id="interactive-demo">
       <h2>Interactive EV Model</h2>
-      <p>Three.js visualizations will go here...</p>
+      <CarModel />
     </section>
   );
 }
+
 
 export default App;
