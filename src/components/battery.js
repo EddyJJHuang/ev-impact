@@ -1,11 +1,11 @@
 
 const Battery = () => {
   return(
-    <div className='relative grow w-full h-[100vh]'>
+    <div className='relative w-full h-[100vh]'>
       <div className='absolute top-[200px]'>
         <img src={require('../assets/battery.png')} className='float-left min-w-[680px]'/>
         <div className='absolute left-[400px]'>
-          <p className='absolute top-[-80px] left-[250px] max-w-[250px]'>
+          <p className='absolute top-[-100px] left-[260px] max-w-[250px]'>
             Electric vehicles have 30% reduced Carbon Dioxide emission compared to combustion vehicles.
           </p>
           <svg width="500" height="104" viewBox="0 0 500 104" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +15,7 @@ const Battery = () => {
 
         </div>
         <div className='absolute left-[400px] top-[200px]'>
-          <p className='absolute top-[00px] left-[450px] max-w-[250px]'>
+          <p className='absolute top-[-10px] left-[450px] max-w-[250px]'>
             Electric vehicle saves 15% more water then combustion vehicles.
           </p>
           <svg width="686" height="57" viewBox="0 0 686 57" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +24,7 @@ const Battery = () => {
           </svg>
         </div>
         <div className='absolute left-[400px] top-[400px]'>
-          <p className='absolute top-[100px] left-[380px] max-w-[250px]'>
+          <p className='absolute top-[90px] left-[380px] max-w-[250px]'>
             One electric vehicle saves 55 tons of carbon dioxide over its lifetime.
           </p>
           <svg width="562" height="191" viewBox="0 0 562 191" fill="none" xmlns="http://www.w3.org/2000/svg">

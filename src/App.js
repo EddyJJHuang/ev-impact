@@ -1,5 +1,5 @@
 // App.js
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import './index.css'
 import { IoMoon, IoSunny } from 'react-icons/io5' 
@@ -10,6 +10,7 @@ import Battery from './components/battery';
 function App() {
   const [darkMode, setDarkMode] = useState(false)
   const [mineralN, setMineralN] = useState(0)
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const mineralList = ["Aluminium", "Nickel", "Cobalt", "Lithium", "Other"]
   const mineralContent = [
@@ -21,11 +22,26 @@ function App() {
   ]
   const mineralImage = [require("./assets/aluminium.png"),require("./assets/nickel.png"), require("./assets/cobalt.png"), require("./assets/lithium.png"), require("./assets/other.png") ]
   const mineralColor = ["rgba(255,255,255,0.2)","rgba(144,244,238, 0.2)","rgba(121,135,255,0.2)","rgba(255,81,81,0.2)","rgba(235,114,255,0.2)"]
+  const mineralWidth = [250,360,285,354,290]
+  const handleScroll = () => {
+      const position = window.scrollY;
+      console.log(position)
+      setScrollPosition(position);
+  };
+  
+  useEffect(() => {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.scrollTo({top: 1900})
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
+
 
   return (
     <div className='flex flex-col items-center relative overflow-hidden'>
       {/* Light mode */}
-      <div className='flex flex-col items-center w-full bg-white'>
+      <div className='flex flex-col items-center w-full bg-white mt-[1900px]'>
         <div className='flex items-center flex-col h-[100vh] justify-center'>
           <h1>
             Tesla: The Environmental & Social Impact
@@ -34,23 +50,23 @@ function App() {
         </div>
         {/* Word bubble */}
         <div className='flex items-center text-center flex-col leading-10 font-[Dhyana] h-[100vh] justify-center'>
-          <p>“3x increase in direct supplier audits”</p>
-          <p>“We are a majority-minority company with 67% of U.S. employees from underrepresented groups”</p>
-          <p>“In 2022, our customers avoided releasing about 13.4 million metric tons of CO2 into the atmosphere”</p>
-          <p>“100% renewable supercharger network” &nbsp;&nbsp;&nbsp;&nbsp;“We strive to have the safest and healthiest operations in the world.”</p>
-          <p>“4 mining companies in our supply chain completed or agreed to IRMA audits”&nbsp;&nbsp;&nbsp;&nbsp;“800+ suppliers engaged in responsible sourcing”</p>
-          <p>“+80% find work personally rewarding and challenging”&nbsp;&nbsp;&nbsp;&nbsp;“75+ diversity hiring events”</p>
-          <p>“Fire incidents are lower for Tesla vehicles then the average vehicle in the U.S.</p>
-          <p>“32,400 kW of solar panels installed on factories”</p>
+          <p style={{transform: scrollPosition < 400?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 500?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“3x increase in direct supplier audits”</p>
+          <p style={{transform: scrollPosition < 450?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 550?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“We are a majority-minority company with 67% of U.S. employees from underrepresented groups”</p>
+          <p style={{transform: scrollPosition < 500?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 600?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“In 2022, our customers avoided releasing about 13.4 million metric tons of CO2 into the atmosphere”</p>
+          <p style={{transform: scrollPosition < 550?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 650?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“100% renewable supercharger network” &nbsp;&nbsp;&nbsp;&nbsp;“We strive to have the safest and healthiest operations in the world.”</p>
+          <p style={{transform: scrollPosition < 600?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 700?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“4 mining companies in our supply chain completed or agreed to IRMA audits”&nbsp;&nbsp;&nbsp;&nbsp;“800+ suppliers engaged in responsible sourcing”</p>
+          <p style={{transform: scrollPosition < 650?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 750?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“+80% find work personally rewarding and challenging”&nbsp;&nbsp;&nbsp;&nbsp;“75+ diversity hiring events”</p>
+          <p style={{transform: scrollPosition < 700?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 800?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“Fire incidents are lower for Tesla vehicles then the average vehicle in the U.S.</p>
+          <p style={{transform: scrollPosition < 750?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 850?0:1, transition: "transform 1.5s ease-out, opacity 2s ease-out"}}>“32,400 kW of solar panels installed on factories”</p>
         </div>
         <Car/>
         <Battery />
-        <button className='bg-black p-4 rounded-full mb-[500px] mt-[2200px]' onClick={() => {setDarkMode(!darkMode)}}>
+        <button className={`bg-black p-4 rounded-full mt-[400px] mb-[400px] animate-bounce`} onClick={() => {setDarkMode(!darkMode)}}>
           <IoMoon size={30} color='white'/>
         </button>
       </div>
       {/* Dark Mode */}
-      <div className='bg-black w-full absolute text-white flex flex-col items-center' style={{transition: 'top 2s', bottom:darkMode?7000:0}}>
+      <div className='bg-black w-full absolute text-white flex flex-col items-center bottom-0' style={{transition: 'opacity 0.5s ease-in-out', opacity:darkMode?1:0, pointerEvents: darkMode?"":"none"}}>
         <div className='h-[100vh] flex justify-center items-center'>
           <h1>
             Tesla: The Environmental & Social Impact
@@ -59,12 +75,12 @@ function App() {
         <div className='h-[100vh] flex justify-center items-center'>
           <p className='w-[630px]'>Yes, while switching from combustion to electric vehicles would reduce the overall carbon footprint of the transportation system, it would not sufficiently address the climate change issues caused by personal transportation, and comes with a battalion of significant social and health issues that companies have hidden from the public view. These issues cannot be solved by continuing to rely on personal vehicles: The focus should be on making a better public transportation system and building walk-able neighborhoods where essentials are closer to home. Companies have forced personal cars on the public for so long, that we cannot even imagine a world without personal cars, and the issues presented today illustrate why we SHOULD imagine a world without personal cars.</p>
         </div>
-        <div className='h-[100vh] flex flex-col justify-center w-[1000px]'>
+        <div className='flex flex-col justify-center w-[1000px] gap-4 mt-[500px] mb-[500px]'>
           <h2>Minerals</h2>
           <div className='flex flex-row w-[400px] justify-between flex-wrap'>
             {mineralList.map((mineral, index)=> {
               return (
-                <button onClick={() => {setMineralN(index)}}>
+                <button onClick={() => {setMineralN(index)}} key={mineral}>
                   <h3 
                     className=''
                     style={{color: mineralN == index?'rgba(255,255,255,1)':'rgba(255,255,255,0.5)', fontFamily: mineralN == index?'DhyanaBold':'DhyanaRegular'}}>
@@ -75,9 +91,10 @@ function App() {
             })}
           </div>
           <div className='bg-[rgba(255,255,255,1)] h-[1px] w-full'/>
-          <div className='flex flex-row'>
-            <img src={mineralImage[mineralN]} className='h-[fit-content] w-[200px]'/>
+          <div className='flex flex-row gap-8 items-center relative'>
+            <img src={mineralImage[mineralN]} className='h-[fit-content] z-10' style={{width: mineralWidth[mineralN]}}/>
             <p>{mineralContent[mineralN]}</p>
+            <div className='w-[400px] h-[400px] blur-3xl absolute rounded-full pointer-events-none' style={{backgroundColor: mineralColor[mineralN]}}/>
           </div>
         </div>
         <div className='h-[100vh] flex justify-center items-center'>
@@ -96,11 +113,9 @@ function App() {
           The Electric vehicles (EVs) made by Tesla are surging in popularity right now due to their image as sustainable and futuristic. Electric vehicles widely appear to be green, however this could not be further from the truth. When compared to the environmental disaster that the public has labeled combustion cars, anything would be an upgrade. The Companies that are funded by our need for cars, have forced upon us charging/gas stations, parking lots, roads, repair centers, road signs, all of which segregate and make cities unwalkable and uncyclable, so much so that we cannot even imagine a world without cars. All of this infrastructure has an environmental and social impact, that is compounded by tire wear and the mining of the minerals needed for these cars.
           </p>
         </div>
-        <div className='h-[100vh] flex justify-center items-center'>
-          <button className='bg-white p-4 rounded-full mb-[300px] mt-[300px]' onClick={() => {setDarkMode(!darkMode)}}>
+          <button className='bg-white p-4 rounded-full mb-[400px] mt-[300px] animate-bounce' onClick={() => {setDarkMode(!darkMode)}}>
             <IoSunny size={30} color="black"/>
           </button>
-        </div>
       </div>
     </div>
   );

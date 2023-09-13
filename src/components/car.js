@@ -1,6 +1,6 @@
 const Car = () => {
   return(
-    <div className='relative grow w-full h-[100vh]'>
+    <div className='relative w-full h-[100vh] mb-[300px]'>
       <div className='absolute top-[200px] w-full'>
         <img src={require('../assets/car.png')} className='float-right min-w-[940px]'/>
         <p className='absolute top-[40px] right-[430px] max-w-[250px]'>
