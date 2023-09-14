@@ -1,6 +1,11 @@
-const Car = () => {
+const Car = ({scrollPosition}) => {
   return(
-    <div className='relative w-full h-[100vh] mb-[300px]'>
+    <div className='relative w-full h-[100vh] mb-[300px]'
+    style={{
+      transform: scrollPosition < 3100?"translateX(50vw)":"translateX(0vw)",
+      opacity: scrollPosition < 3100?0:1,
+      transition: "transform 1s ease-out, opacity 2s ease-out"}}
+    >
       <div className='absolute top-[200px] w-full'>
         <img src={require('../assets/car.png')} className='float-right min-w-[940px]'/>
         <p className='absolute top-[40px] right-[430px] max-w-[250px]'>

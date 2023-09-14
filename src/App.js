@@ -39,9 +39,9 @@ function App() {
 
 
   return (
-    <div className='flex flex-col items-center relative overflow-hidden'>
+    <div className='flex flex-col items-center relative overflow-hidden '>
       {/* Light mode */}
-      <div className='flex flex-col items-center w-full bg-white mt-[1900px]'>
+      <div className='flex flex-col items-center w-full bg-white mt-[1950px]'>
         <div className='flex items-center flex-col h-[100vh] justify-center'>
           <h1>
             Tesla: The Environmental & Social Impact
@@ -49,18 +49,18 @@ function App() {
           <p>"Our mission is to accelerate the world's transition to sustainable energy"</p>
         </div>
         {/* Word bubble */}
-        <div className='flex items-center text-center flex-col leading-10 font-[Dhyana] h-[100vh] justify-center'>
-          <p style={{transform: scrollPosition < 400?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 500?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“3x increase in direct supplier audits”</p>
-          <p style={{transform: scrollPosition < 450?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 550?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“We are a majority-minority company with 67% of U.S. employees from underrepresented groups”</p>
-          <p style={{transform: scrollPosition < 500?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 600?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“In 2022, our customers avoided releasing about 13.4 million metric tons of CO2 into the atmosphere”</p>
-          <p style={{transform: scrollPosition < 550?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 650?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“100% renewable supercharger network” &nbsp;&nbsp;&nbsp;&nbsp;“We strive to have the safest and healthiest operations in the world.”</p>
-          <p style={{transform: scrollPosition < 600?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 700?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“4 mining companies in our supply chain completed or agreed to IRMA audits”&nbsp;&nbsp;&nbsp;&nbsp;“800+ suppliers engaged in responsible sourcing”</p>
-          <p style={{transform: scrollPosition < 650?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 750?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“+80% find work personally rewarding and challenging”&nbsp;&nbsp;&nbsp;&nbsp;“75+ diversity hiring events”</p>
-          <p style={{transform: scrollPosition < 700?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 800?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“Fire incidents are lower for Tesla vehicles then the average vehicle in the U.S.</p>
-          <p style={{transform: scrollPosition < 750?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 850?0:1, transition: "transform 1.5s ease-out, opacity 2s ease-out"}}>“32,400 kW of solar panels installed on factories”</p>
+        <div className='flex items-center text-center flex-col leading-10 font-[Dhyana] h-[100vh] justify-center whitespace-nowrap'>
+          <p style={{transform: scrollPosition < 2100?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 2100?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“3x increase in direct supplier audits”</p>
+          <p style={{transform: scrollPosition < 2150?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 2150?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“We are a majority-minority company with 67% of U.S. employees from underrepresented groups”</p>
+          <p style={{transform: scrollPosition < 2200?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 2200?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“In 2022, our customers avoided releasing about 13.4 million metric tons of CO2 into the atmosphere”</p>
+          <p style={{transform: scrollPosition < 2250?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 2250?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“100% renewable supercharger network” &nbsp;&nbsp;&nbsp;&nbsp;“We strive to have the safest and healthiest operations in the world.”</p>
+          <p style={{transform: scrollPosition < 2300?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 2300?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“4 mining companies in our supply chain completed or agreed to IRMA audits”&nbsp;&nbsp;&nbsp;&nbsp;“800+ suppliers engaged in responsible sourcing”</p>
+          <p style={{transform: scrollPosition < 2350?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 2350?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“+80% find work personally rewarding and challenging”&nbsp;&nbsp;&nbsp;&nbsp;“75+ diversity hiring events”</p>
+          <p style={{transform: scrollPosition < 2400?"translateX(100vw)":"translateX(0vw)", opacity: scrollPosition < 2400?0:1, transition: "transform 1s ease-out, opacity 2s ease-out"}}>“Fire incidents are lower for Tesla vehicles then the average vehicle in the U.S.</p>
+          <p style={{transform: scrollPosition < 2450?"translateX(-100vw)":"translateX(0vw)", opacity: scrollPosition < 2450?0:1, transition: "transform 1.5s ease-out, opacity 2s ease-out"}}>“32,400 kW of solar panels installed on factories”</p>
         </div>
-        <Car/>
-        <Battery />
+        <Car scrollPosition={scrollPosition}/>
+        <Battery scrollPosition={scrollPosition}/>
         <button className={`bg-black p-4 rounded-full mt-[400px] mb-[400px] animate-bounce`} onClick={() => {setDarkMode(!darkMode)}}>
           <IoMoon size={30} color='white'/>
         </button>
