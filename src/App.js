@@ -37,7 +37,7 @@ function App() {
   useEffect(() => {
       window.addEventListener('scroll', handleScroll, { passive: true });
 
-      window.scrollTo({top: 600})
+      window.scrollTo({top: 700})
       return () => {
           window.removeEventListener('scroll', handleScroll);
       };
