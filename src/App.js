@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import './index.css'
-import { IoMoon, IoSunny } from 'react-icons/io5' 
+import { IoMoon, IoSunny, IoArrowUpOutline } from 'react-icons/io5' 
 import Car from './components/car';
 import Battery from './components/battery';
 
@@ -49,23 +49,28 @@ function App() {
     <div className='flex flex-col items-center relative overflow-hidden '>
       {/* Light mode */}
       <div className='flex flex-col items-center w-full bg-white h-[5500px]' ref={lightRef}>
-        <div  style={{marginBottom: 300, marginTop: 100}}>
+        <div  style={{marginBottom: 200, marginTop: 100, width: 1600}}>
           <h3>Sources:</h3>
           <p>
-            Tire Paragraph: https://www.theatlantic.com/technology/archive/2023/07/electric-vehicles-tires-wearing-out-particulates/674750/ <br/>
-            Rare minerals Image: https://www.sciencenews.org/article/rare-earth-mining-renewable-energy-future#:~:text=Rare%20earths%20are%20mined%20by,that%20might%20leak%20into%20groundwater.<br/>
-            Tire Image: https://www.pngwing.com/en/free-png-ppfuj/download <br/>
-            Lithium Image: https://feed.jeronimomartins.com/deep/lithium-the-new-white-gold/ <br/>
-            Nickel Image: https://stock.adobe.com/images/macro-shoot-of-piece-of-nickel-metal-ore-isolated-on-a-white-background-closeup-photo-of-amazing-shiny-mineral-rough/414192078<br/>
-            Aluminum Image: https://images-of-elements.com/aluminium.php <br/>
-            Cobalt Image: https://carbosystem.com/en/wcco-cobalt-tungsten/ <br/>
-            Terbium Image: https://www.pngwing.com/en/free-png-tdxgs/download <br/>
+            Tire Image: PNGWING - Exclusive PNG Design Images, www.pngwing.com/. Accessed 15 Sept. 2023.  <br/>
+            Dust Image: PNGWING - Exclusive PNG Design Images, www.pngwing.com/https://www.pngwing.com/en/free-png-vckga. Accessed 15 Sept. 2023. <br/>
+            Rare Earth Minerals Image: PNGWING - Exclusive PNG Design Images, www.pngwing.com/. Accessed 15 Sept. 2023. <br/>
+            Lithium Image: Admin. “Lithium, the New White Gold: Feed Magazine.” Feed., 8 July 2019, feed.jeronimomartins.com/deep/lithium-the-new-white-gold/.  <br/>
+            Nickel Image: “Macro Shoot of Piece of Nickel Metal Ore Isolated on a White Background. Closeup Photo of Amazing Shiny Mineral Rough Stock Photo.” Adobe Stock, stock.adobe.com/images/macro-shoot-of-piece-of-nickel-metal-ore-isolated-on-a-white-background-closeup-photo-of-amazing-shiny-mineral-rough/414192078. Accessed 15 Sept. 2023. <br/>
+            Aluminum Image: “Chemical Elements.” Chemical Elements - Aluminium, images-of-elements.com/aluminium.php. Accessed 15 Sept. 2023.  <br/>
+            Cobalt Image: Barta, Carlos. “WCCO - Cobalt Tungsten.” CarboSystem, 25 Apr. 2021, carbosystem.com/en/wcco-cobalt-tungsten/.  <br/>
+            
+            Rare minerals Paragraph: Gramling, Carolyn. “Rare Earth Mining May Be Key to Our Renewable Energy Future. but at What Cost?” Science News, 21 Jan. 2023, www.sciencenews.org/article/rare-earth-mining-renewable-energy-future#:~:text=Rare%20earths%20are%20mined%20by,that%20might%20leak%20into%20groundwater. <br/>
+            Tire Paragraph: Zipper, David. “EVs Are Sending Toxic Tire Particles into the Water, Soil, and Air.” The Atlantic, Atlantic Media Company, 19 July 2023, www.theatlantic.com/technology/archive/2023/07/electric-vehicles-tires-wearing-out-particulates/674750/.  <br/>
             Book: Marx, Paris. Road to Nowhere: What Silicon Valley Gets Wrong about the Future of Transportation. Verso, 2022. <br/>
-            Tesla Impact Report: https://www.tesla.com/impact  <br/>
+            Tesla Impact Report: “Impact.” Tesla, www.tesla.com/impact. Accessed 15 Sept. 2023.   <br/>
           </p>
 
         </div>
-        <div className='flex items-center flex-col h-[100vh] justify-center'>
+        <div className='flex items-center flex-col h-[100vh] justify-center relative'>
+          <div className='absolute top-2 text-[#505050]'>
+            Sources Above
+          </div>
           <h1>
             Tesla: The Environmental & Social Impact
           </h1>
@@ -140,7 +145,8 @@ function App() {
           The Electric vehicles (EVs) made by Tesla are surging in popularity right now due to their image as sustainable and futuristic. Electric vehicles widely appear to be green, however this could not be further from the truth. When compared to the environmental disaster that the public has labeled combustion cars, anything would be an upgrade. The Companies that are funded by our need for cars, have forced upon us charging/gas stations, parking lots, roads, repair centers, road signs, all of which segregate and make cities unwalkable and uncyclable, so much so that we cannot even imagine a world without cars. All of this infrastructure has an environmental and social impact, that is compounded by tire wear and the mining of the minerals needed for these cars.
           </p>
         </div>
-        <button className='bg-white p-4 rounded-full mb-[400px] mt-[300px] animate-bounce' onClick={() => {setDarkMode(!darkMode)}}>
+        <IoArrowUpOutline className='mt-[150px] mb-[150px]'/>
+        <button className='bg-white p-4 rounded-full mb-[400px] animate-bounce' onClick={() => {setDarkMode(!darkMode)}}>
           <IoSunny size={30} color="black"/>
         </button>
       </div>
