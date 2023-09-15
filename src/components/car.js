@@ -2,8 +2,8 @@ const Car = ({scrollPosition}) => {
   return(
     <div className='relative w-full h-[100vh] mb-[300px]'
     style={{
-      transform: scrollPosition < 3100?"translateX(50vw)":"translateX(0vw)",
-      opacity: scrollPosition < 3100?0:1,
+      transform: scrollPosition < 1800?"translateX(50vw)":"translateX(0vw)",
+      opacity: scrollPosition < 1800?0:1,
       transition: "transform 1s ease-out, opacity 2s ease-out"}}
     >
       <div className='absolute top-[200px] w-full'>

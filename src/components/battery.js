@@ -3,8 +3,8 @@ const Battery = ({scrollPosition}) => {
   return(
     <div className='relative w-full h-[100vh]'
       style={{
-        transform: scrollPosition < 4200?"translateX(-50vw)":"translateX(0vw)", 
-        opacity: scrollPosition < 4200?0:1, 
+        transform: scrollPosition < 3000?"translateX(-50vw)":"translateX(0vw)", 
+        opacity: scrollPosition < 3000?0:1, 
         transition: "transform 1s ease-out, opacity 1s ease-out"
       }}
     >
